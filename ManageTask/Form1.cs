@@ -18,16 +18,17 @@ namespace ManageTask
         List<Task> taskList = new List<Task>();
         private void button1_Click(object sender, EventArgs e)
         {
-            Task list = new Task();
-            list.Id = taskList.Count + 1;
-            list.TaskName = textBox1.Text;
-            list.Description = textBox2.Text;
-            list.DueTime = dateTimePicker1.Value;
-            list.Priority = comboBox1.Text;
-            list.Status = comboBox2.Text;
+            Task task = new Task();
+            task.Id = taskList.Count + 1;
+            task.TaskName = textBox1.Text;
+            task.Description = textBox2.Text;
+            task.DueTime = dateTimePicker1.Value;
+            task.Priority = comboBox1.Text;
+            task.Status = comboBox2.Text;
 
-            taskList.Add(list);
+            taskList.Add(task);
             MessageBox.Show("Görev Baþarýyla Eklendi.");
+            textBox1.Text = ""; textBox2.Text = ""; comboBox1.Text = ""; comboBox2.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace ManageTask
                 {
                     taskList.Remove(taskList[i]);
                     MessageBox.Show("Görev Baþarýyla Silindi.");
+                    textBox3.Text = ""; textBox4.Text = ""; comboBox3.Text = ""; comboBox4.Text = ""; textBox5.Text = "";
                 }
             }
         }
@@ -112,6 +114,7 @@ namespace ManageTask
                     taskList[i].Status = comboBox5.Text;
 
                     MessageBox.Show("Görev Baþarýyla Güncellendi.");
+                    textBox8.Text = ""; textBox7.Text = ""; comboBox6.Text = ""; comboBox5.Text = ""; textBox6.Text = "";
                 }
             }
 
@@ -119,10 +122,10 @@ namespace ManageTask
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int result= Convert.ToInt32(textBox9.Text);
+            int result = Convert.ToInt32(textBox9.Text);
             dataGridView1.Rows.Clear();
 
-            for (int i= 0; i < taskList.Count; i++)
+            for (int i = 0; i < taskList.Count; i++)
             {
                 if (result == taskList[i].Id)
                 {
