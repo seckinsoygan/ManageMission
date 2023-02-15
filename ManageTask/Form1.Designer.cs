@@ -148,6 +148,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.IntegralHeight = false;
             this.comboBox3.Location = new System.Drawing.Point(332, 117);
@@ -157,6 +158,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.IntegralHeight = false;
             this.comboBox4.Location = new System.Drawing.Point(332, 146);
@@ -234,6 +236,7 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "Sil";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -243,13 +246,15 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Düzenle";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(170, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 15);
+            this.label5.Size = new System.Drawing.Size(56, 15);
             this.label5.TabIndex = 21;
             this.label5.Text = "Add Task";
             // 
@@ -265,9 +270,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(385, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 15);
+            this.label7.Size = new System.Drawing.Size(72, 15);
             this.label7.TabIndex = 23;
             this.label7.Text = "Delete Task";
             // 
@@ -283,9 +289,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(615, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 15);
+            this.label9.Size = new System.Drawing.Size(75, 15);
             this.label9.TabIndex = 25;
             this.label9.Text = "Update Task";
             // 
@@ -307,6 +314,7 @@
             this.button5.TabIndex = 27;
             this.button5.Text = "Getir";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox9
             // 
@@ -408,6 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label11);
