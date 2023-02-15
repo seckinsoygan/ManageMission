@@ -11,7 +11,7 @@ namespace ManageTask
         public int Id { get; set; }
         public string TaskName { get; set; }
         public string Description { get; set; }
-        public string DueTime { get; set; }
+        public DateTime DueTime { get; set; }
         public string Priority { get; set; }
         public string Status { get; set; }
     }

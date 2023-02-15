@@ -22,7 +22,7 @@ namespace ManageTask
             list.Id = taskList.Count + 1;
             list.TaskName = textBox1.Text;
             list.Description = textBox2.Text;
-            list.DueTime = textBox9.Text;
+            list.DueTime = dateTimePicker1.Value;
             list.Priority = comboBox1.Text;
             list.Status = comboBox2.Text;
 
@@ -37,31 +37,30 @@ namespace ManageTask
 
         private void button6_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add();
             dataGridView1.Rows.Clear();
             for (int i = 0; i < taskList.Count; i++)
             {
-                    dataGridView1.Rows[i].Cells[0].Value = taskList[i].Id;
-                    dataGridView1.Rows[i].Cells[1].Value = taskList[i].TaskName;
-                    dataGridView1.Rows[i].Cells[2].Value = taskList[i].Description;
-                    dataGridView1.Rows[i].Cells[3].Value = taskList[i].DueTime;
-                    dataGridView1.Rows[i].Cells[4].Value = taskList[i].Priority;
-                    dataGridView1.Rows[i].Cells[5].Value = taskList[i].Status;    
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[0].Value = taskList[i].Id;
+                dataGridView1.Rows[i].Cells[1].Value = taskList[i].TaskName;
+                dataGridView1.Rows[i].Cells[2].Value = taskList[i].Description;
+                dataGridView1.Rows[i].Cells[3].Value = taskList[i].DueTime;
+                dataGridView1.Rows[i].Cells[4].Value = taskList[i].Priority;
+                dataGridView1.Rows[i].Cells[5].Value = taskList[i].Status;
             }
-          
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             int result = Convert.ToInt32(textBox5.Text);
 
-            for(int i = 0; i < taskList.Count; i++)
+            for (int i = 0; i < taskList.Count; i++)
             {
                 if (result == taskList[i].Id)
                 {
                     textBox3.Text = taskList[i].TaskName;
                     textBox4.Text = taskList[i].Description;
-                    textBox10.Text = taskList[i].DueTime;
+                    dateTimePicker2.Value = taskList[i].DueTime;
                     comboBox3.Text = taskList[i].Priority;
                     comboBox4.Text = taskList[i].Status;
                 }
@@ -72,9 +71,9 @@ namespace ManageTask
         {
             int result = Convert.ToInt32(textBox5.Text);
 
-            for(int i = 0; i < taskList.Count; i++)
+            for (int i = 0; i < taskList.Count; i++)
             {
-                if(result == taskList[i].Id)
+                if (result == taskList[i].Id)
                 {
                     taskList.Remove(taskList[i]);
                     MessageBox.Show("Görev Baþarýyla Silindi.");
@@ -92,7 +91,7 @@ namespace ManageTask
                 {
                     textBox8.Text = taskList[i].TaskName;
                     textBox7.Text = taskList[i].Description;
-                    textBox11.Text = taskList[i].DueTime;
+                    dateTimePicker3.Value = taskList[i].DueTime;
                     comboBox6.Text = taskList[i].Priority;
                     comboBox5.Text = taskList[i].Status;
                 }
@@ -108,7 +107,7 @@ namespace ManageTask
                 {
                     taskList[i].TaskName = textBox8.Text;
                     taskList[i].Description = textBox7.Text;
-                    taskList[i].DueTime = textBox11.Text;
+                    taskList[i].DueTime = dateTimePicker3.Value;
                     taskList[i].Priority = comboBox6.Text;
                     taskList[i].Status = comboBox5.Text;
 
@@ -116,6 +115,46 @@ namespace ManageTask
                 }
             }
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int result= Convert.ToInt32(textBox9.Text);
+            dataGridView1.Rows.Clear();
+
+            for (int i= 0; i < taskList.Count; i++)
+            {
+                if (result == taskList[i].Id)
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[i].Cells[0].Value = taskList[i].Id;
+                    dataGridView1.Rows[i].Cells[1].Value = taskList[i].TaskName;
+                    dataGridView1.Rows[i].Cells[2].Value = taskList[i].Description;
+                    dataGridView1.Rows[i].Cells[3].Value = taskList[i].DueTime;
+                    dataGridView1.Rows[i].Cells[4].Value = taskList[i].Priority;
+                    dataGridView1.Rows[i].Cells[5].Value = taskList[i].Status;
+                }
+            }
+            textBox9.Text = "";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < taskList.Count; i++)
+            {
+                if (textBox10.Text == taskList[i].TaskName)
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[i].Cells[0].Value = taskList[i].Id;
+                    dataGridView1.Rows[i].Cells[1].Value = taskList[i].TaskName;
+                    dataGridView1.Rows[i].Cells[2].Value = taskList[i].Description;
+                    dataGridView1.Rows[i].Cells[3].Value = taskList[i].DueTime;
+                    dataGridView1.Rows[i].Cells[4].Value = taskList[i].Priority;
+                    dataGridView1.Rows[i].Cells[5].Value = taskList[i].Status;
+                }
+            }
+            textBox10.Text = "";
         }
     }
 }
